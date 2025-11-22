@@ -1,0 +1,202 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biodata Muhammad Yahya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --accent:#2563eb; --muted:#6b7280; --glass: rgba(255,255,255,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding:32px;
+  color:#111827;
+}
+    .container{max-width:920px;margin:0 auto;display:grid;grid-template-columns:260px 1fr;gap:24px}
+    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}/* Sidebar */
+.sidebar{position:relative}
+.avatar{width:100%;aspect-ratio:1/1;border-radius:12px;overflow:hidden;display:block;margin-bottom:14px;background:linear-gradient(135deg,var(--accent),#7c3aed);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:40px}
+.name{font-size:20px;font-weight:700;margin-bottom:6px}
+.role{font-size:13px;color:var(--muted);margin-bottom:10px}
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.contact-list li{font-size:13px;color:#374151}
+.skill-badge{display:inline-block;padding:6px 8px;border-radius:999px;background:var(--bg);font-size:12px;margin:6px 6px 0 0}
+
+/* Main */
+.main{padding:0}
+.section{margin-bottom:18px}
+.section h3{margin:0 0 10px 0;font-size:16px}
+.bio{line-height:1.6;color:#374151}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.chip{background:var(--glass);padding:6px 10px;border-radius:10px;font-size:13px}
+
+/* Buttons */
+.actions{display:flex;gap:8px;margin-top:12px}
+button{border:0;padding:8px 12px;border-radius:10px;cursor:pointer;background:var(--accent);color:white;font-weight:600}
+button.ghost{background:transparent;color:var(--accent);border:1px solid rgba(37,99,235,0.12)}
+
+/* Responsive */
+@media (max-width:800px){
+  .container{grid-template-columns:1fr}
+  .avatar{font-size:36px}
+}
+
+/* Print */
+@media print{
+  body{background:white;padding:0}
+  .actions, .card{box-shadow:none}
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="card sidebar" id="sidebar">
+      <img id="avatar" class="avatar" src="yahya.jpg" alt="Foto Profil" style="object-fit:cover;"/><div>
+    <div class="name" id="field-name">Muhammad Yahya XI TO 3</div>
+    <div class="role" id="field-role">Pelajar / Otomotif </div>
+  </div>
+
+  <div class="section" style="margin-top:12px">
+    <h3>Kontak</h3>
+    <ul class="contact-list">
+      <li>📍 <span id="field-location">Gunungpati, Semarang, Jawa Tengah, Indonesia</span></li>
+      <li>✉️ <span id="field-email">kenenore86@gmail.com</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>Keterampilan</h3>
+    <div id="skills">
+      <span class="skill-badge">Otomotif</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Tautan</h3>
+    <div class="row">
+      <a class="chip" href="https://www.instagram.com/yy_cokaes?igsh=MXQ3dXRjdms3ZDdzbA==" target="_blank">Instagram</a>
+      <a class="chip" href="https://youtube.com/@yy_yahya?si=I3jp3imjwGIOO0Mr" target="_blank">Youtube</a>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="ghost" id="downloadVCard">Download vCard</button>
+    <button class="ghost" onclick="window.print()">Print</button>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="card section">
+    <h3>Tentang Saya</h3>
+    <p class="bio" id="field-bio">Halo! Perkenalkan nama saya Muhammad Yahya kelas 11 jurusan Teknik Otomotif — pelajar yang tertarik di bidang otomotif. </p>
+  </div>
+
+  <div class="card section">
+    <h3>Pendidikan</h3>
+    <div>
+      <strong>SD N Ngijo 01</strong>
+      <div class="muted" id="field-edu">2019-2021 </div>
+      <div>
+      <strong>SMP IT Mutiara Hati Semarang</strong>
+      <div class="muted" id="field-edu">2021-2024 </div>
+      <div> 
+      <strong>SMK N 4 Semarang</strong>
+      <div class="muted" id="field-edu">2024-sekarang</div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="card section">
+    <h3>Hobi</h3>
+    <div class="row" id="hobbies">
+      <div class="chip">Memancing🎣</div>
+      <div class="chip">Lari Pagi🏃</div>
+      <div class="chip">Gaming🎮</div>
+      <div class="chip">Membaca📖</div>
+      <div class="chip">Badminton🏸</div>
+      <div class="chip">Nonton Kartun📺</div>
+      <div class="chip">Berkebun🌱</div>
+    </div>
+  </div>
+</main>
+
+  </div>  <script>
+    // Simple editable fields feature
+    const editBtn = document.getElementById('editBtn');
+    let editing = false;
+    editBtn.addEventListener('click', ()=>{
+      editing = !editing;
+      if(editing){
+        makeEditable(true);
+        editBtn.textContent = 'Simpan';
+      } else {
+        makeEditable(false);
+        editBtn.textContent = 'Edit';
+      }
+    });
+
+    function makeEditable(flag){
+      const ids = ['field-name','field-role','field-location','field-email','field-phone','field-bio','field-edu','field-exp'];
+      ids.forEach(id=>{
+        const el = document.getElementById(id);
+        el.contentEditable = flag;
+        el.style.outline = flag ? '2px dashed rgba(37,99,235,0.18)' : 'none';
+      });
+      // avatar editing (initials) using prompt
+      const avatar = document.getElementById('avatar');
+      if(flag){
+        avatar.addEventListener('click', changeAvatar);
+        avatar.style.cursor = 'pointer';
+      } else {
+        avatar.removeEventListener('click', changeAvatar);
+        avatar.style.cursor = 'default';
+      }
+    }
+
+    function changeAvatar(){
+  const fileInput = document.getElementById('avatarInput');
+  fileInput.click();
+  fileInput.onchange = () => {
+    const file = fileInput.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const avatar = document.getElementById('avatar');
+      avatar.src = e.target.result;
+      avatar.textContent = '';
+    };
+    reader.readAsDataURL(file);
+  };
+}
+
+    // vCard download
+    document.getElementById('downloadVCard').addEventListener('click', ()=>{
+      const name = document.getElementById('field-name').textContent.trim();
+      const email = document.getElementById('field-email').textContent.trim();
+      const phone = document.getElementById('field-phone').textContent.trim();
+      const location = document.getElementById('field-location').textContent.trim();
+
+      const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${escapeV(name)}\nEMAIL;TYPE=INTERNET:${escapeV(email)}\nTEL;TYPE=CELL:${escapeV(phone)}\nADR;TYPE=HOME:;;${escapeV(location)};;;;\nEND:VCARD`;
+      const blob = new Blob([vcard], {type: 'text/vcard'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = (name || 'contact') + '.vcf';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    function escapeV(s){ return s.replace(/\n/g,' ').replace(/,/g,''); }
+
+    // Small: set avatar letters from name initially
+    /* inisial otomatis dihapus untuk avatar foto */
+
+  </script></body>
+</html>
